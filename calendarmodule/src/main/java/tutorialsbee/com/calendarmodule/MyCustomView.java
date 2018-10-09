@@ -37,6 +37,18 @@ public class MyCustomView extends View {
     private void init(@Nullable AttributeSet set) {
 
     }
+    
+    @Override
+    public void setBackground(Drawable background) {
+        super.setBackground(background);
+    }
+
+    @Override
+    public void setBackgroundColor(int color) {
+        super.setBackgroundColor(color);
+        this.color = color;
+        invalidate();
+    }
 
     @Override
     protected void onDraw(Canvas canvas) {
