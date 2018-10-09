@@ -12,6 +12,8 @@ import android.util.AttributeSet;
 import android.view.View;
 
 public class MyCustomView extends View {
+    
+    private int color= Color.MAGENTA;
 
     public MyCustomView(Context context) {
         super(context);
@@ -43,13 +45,14 @@ public class MyCustomView extends View {
         super.setBackgroundColor(color);
         this.color = color;
         invalidate();
+        refreshDrawableState();
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        paint.setColor(Color.MAGENTA);
+        paint.setColor(color);
         Rect rect = new Rect();
         rect.left = 0;
         rect.right = getWidth();
